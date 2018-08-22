@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lyp.citypartner"
+    android:installLocation="auto"
+    android:versionCode="9"
+    android:versionName="1.1.8" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    
+
+    <!-- unavailable in API 23 -->
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <!-- TODO replace above two with next line after Android 4.2 -->
+    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.screen.landscape" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <!-- This excludes Google TV, which is unfortunately included by virtue of not requiring a camera -->
+    <uses-feature android:name="android.hardware.touchscreen" />
+    <!-- TODO make this not required again after android.hardware.camera.any is available -->
+
+    <application
+        android:name="com.lyp.base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light.NoActionBar.TranslucentDecor" >
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.lyp.citypartner.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.lyp.citypartner.SplashActivity"
+            android:label="@string/app_name"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.LoginActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.RegistShopActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.MainActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.MyCustomerActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.CustomerDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.PersonalCenterActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.SettingsActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.MyQRCodeActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.ShopInfoActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.OrderActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.OrderDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.ShopPicActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.AddOrderActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.QueryOrderByIdActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.QueryOrderByDateActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.IncomeHistoryActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.QueryIncomeByDateActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.citypartner.ConfirmCustomerPayActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.pay.PayActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- QRCode start -->
+        <activity
+            android:name="com.google.zxing.client.android.CaptureActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Allow web apps to launch Barcode Scanner by linking to http://zxing.appspot.com/scan. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="zxing.appspot.com"
+                    android:path="/scan"
+                    android:scheme="http" />
+            </intent-filter>
+            <!-- We also support a Google Product Search URL. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.google.com"
+                    android:path="/m/products/scan"
+                    android:scheme="http" />
+            </intent-filter>
+            <!-- And the UK version. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.google.co.uk"
+                    android:path="/m/products/scan"
+                    android:scheme="http" />
+            </intent-filter>
+            <!-- Support zxing://scan/?... like iPhone app -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="scan"
+                    android:path="/"
+                    android:scheme="zxing" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.PreferencesActivity"
+            android:label="@string/preferences_name"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name="com.google.zxing.client.android.encode.EncodeActivity"
+            android:stateNotNeeded="true" >
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.ENCODE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- This allows us to handle the Share button in Contacts. -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/x-vcard" />
+            </intent-filter>
+            <!-- This allows us to handle sharing any plain text . -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.book.SearchBookContentsActivity"
+            android:label="@string/sbc_name"
+            android:stateNotNeeded="true" >
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SEARCH_BOOK_CONTENTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.share.ShareActivity"
+            android:stateNotNeeded="true" >
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SHARE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.history.HistoryActivity"
+            android:label="@string/history_title"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name="com.google.zxing.client.android.share.BookmarkPickerActivity"
+            android:label="@string/bookmark_picker_name"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name="com.google.zxing.client.android.share.AppPickerActivity"
+            android:label="@string/app_picker_name"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name="com.google.zxing.client.android.HelpActivity"
+            android:label="@string/menu_help"
+            android:screenOrientation="user"
+            android:stateNotNeeded="true" />
+        <!-- QRCode end -->
+
+        <activity
+            android:name="com.image.select.MultiImageSelectorActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.image.select.PreViewActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.image.preview.ImagePagerActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lyp.permission.PermissionsActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- ping++ start -->
+        <!-- Ping++ SDK -->
+        <activity
+            android:name="com.pingplusplus.android.PaymentActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <!-- 微信支付 -->
+        <!-- 1.需要将以下"替换成自己 APK 的包名"换成在微信平台上注册填写的包名 -->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            />
+
+        <!-- 支付宝 -->
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+       </activity>
+
+        <!-- 银联支付 -->
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize" />
+        <!-- ping ++ End -->
+    </application>
+
+</manifest>

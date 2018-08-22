@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/main_bg_color" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onBack" >
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:src="@drawable/back_white" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="输入金额"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" >
+
+        <LinearLayout
+            android:id="@+id/ll_input_money"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_marginTop="50dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dip"
+                android:gravity="center_vertical"
+                android:text="请输入金额(元)"
+                android:textColor="@color/item_second_font_color"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:background="@color/white"
+                android:gravity="center_vertical|right"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="￥"
+                    android:textColor="@color/red"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/input_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="15dip"
+                    android:layout_marginStart="15dip"
+                    android:background="#F1F1F1"
+                    android:gravity="center_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:paddingStart="5dip"
+                    android:hint="0.00"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/isded"
+            android:layout_width="match_parent"
+            android:layout_below="@id/ll_input_money"
+            android:layout_marginTop="15dip"
+            android:layout_height="50dip"
+            android:layout_marginStart="10dip"
+            android:checked="true"
+            android:textSize="16sp"
+            android:button="@drawable/checkbox_selector"
+            android:text="使用优惠额度" />
+
+        <Button
+            android:id="@+id/pay_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:background="@drawable/btn_lg_green"
+            android:gravity="center"
+            android:onClick="payBtn"
+            android:text="立即支付"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</LinearLayout>

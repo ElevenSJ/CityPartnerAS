@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/main_bg_color" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onBack" >
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:src="@drawable/back_white" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="商户名称"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/main_bg_color"
+                        android:orientation="vertical" >
+
+                        <!-- <com.lyp.membersystem.view.CircleImageView -->
+                        <!-- android:layout_width="120dip" -->
+                        <!-- android:layout_height="120dip" -->
+                        <!-- android:layout_gravity="center_horizontal" -->
+                        <!-- android:scaleType="centerInside" -->
+                        <!-- android:background="@drawable/avater_bg" -->
+                        <!-- android:src="@drawable/avater_login" /> -->
+
+                        <com.lyp.view.CircleImageView
+                            android:id="@+id/user_avater"
+                            android:layout_width="110dip"
+                            android:layout_height="110dip"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/avater_bg"
+                            android:onClick="uploadAvater"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/personal" />
+
+                        <TextView
+                            android:id="@+id/tv_username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:onClick="editText"
+                            android:padding="10dip"
+                            android:text="Lyp"
+                            android:textColor="@color/white"
+                            android:textSize="25sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="20dip"
+                            android:layout_marginTop="10dip"
+                            android:scaleType="centerCrop" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp" >
+
+                        <ImageView
+                            android:id="@+id/shop_point_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="0dip"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_right_arrow"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/shop_point"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dip"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dip"
+                            android:drawablePadding="2dip"
+                            android:drawableStart="@drawable/shop_point_icon"
+                            android:gravity="center_vertical"
+                            android:text="抵扣额度"
+                            android:textColor="@color/item_font_color"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/exchange_shop_point"
+                            android:layout_width="70dip"
+                            android:layout_height="30dip"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="0dip"
+                            android:layout_marginLeft="5dip"
+                            android:layout_toLeftOf="@id/shop_point_arrow"
+                            android:gravity="center"
+                            android:background="@drawable/btn_sm_green_outline"
+                            android:paddingStart="5dip"
+                            android:paddingEnd="5dip"
+                            android:onClick="exchangeShopPoint"
+                            android:text="兑换现金 "
+                            android:textColor="@color/item_font_color"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_shop_point"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dip"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dip"
+                            android:layout_marginEnd="2dip"
+                            android:singleLine="true"
+                            android:ellipsize="marquee"
+                            android:layout_toLeftOf="@id/exchange_shop_point"
+                            android:layout_toRightOf="@id/shop_point"
+                            android:clickable="false"
+                            android:gravity="center|right"
+                            android:text="0"
+                            android:textColor="@color/item_font_color"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/item_line_color" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:onClick="queryShopPic" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="0dip"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_right_arrow"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/service_apply"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dip"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dip"
+                            android:drawablePadding="2dip"
+                            android:drawableStart="@drawable/shop_pic_icon"
+                            android:gravity="center_vertical"
+                            android:text="商户图片"
+                            android:textColor="@color/item_font_color"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/item_line_color" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:onClick="shopInfo" >
+
+                        <ImageView
+                            android:id="@+id/card_right_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="0dip"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_right_arrow"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dip"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dip"
+                            android:drawablePadding="2dip"
+                            android:drawableStart="@drawable/shop_info"
+                            android:gravity="center_vertical"
+                            android:text="商户信息"
+                            android:textColor="@color/item_font_color"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/item_line_color" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="65dp"
+                        android:onClick="MyQRCode" >
+
+                        <ImageView
+                            android:id="@+id/express_address_right_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="0dip"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_right_arrow"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/express_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dip"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dip"
+                            android:drawablePadding="2dip"
+                            android:drawableStart="@drawable/qr_code_icon"
+                            android:gravity="center_vertical"
+                            android:text="我的二维码"
+                            android:textColor="@color/item_font_color"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/item_line_color" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:onClick="shopIncome" >
+
+                        <ImageView
+                            android:id="@+id/income_right_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="0dip"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_right_arrow"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/income"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dip"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dip"
+                            android:drawablePadding="2dip"
+                            android:drawableStart="@drawable/shop_point_icon"
+                            android:gravity="center_vertical"
+                            android:text="金主收益"
+                            android:textColor="@color/item_font_color"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/item_line_color" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="65dp"
+                        android:onClick="settings" >
+
+                        <ImageView
+                            android:id="@+id/settings_right_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="0dip"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_right_arrow"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/settings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dip"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dip"
+                            android:drawablePadding="2dip"
+                            android:drawableStart="@drawable/settings_icon"
+                            android:gravity="center_vertical"
+                            android:text="设置"
+                            android:textColor="@color/item_font_color"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/item_line_color" />
+
+                    <Button
+                        android:id="@+id/exitBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dip"
+                        android:layout_marginBottom="20dip"
+                        android:layout_marginEnd="10dip"
+                        android:layout_marginStart="10dip"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/btn_red_selector"
+                        android:gravity="center"
+                        android:onClick="exitApp"
+                        android:text="退出"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

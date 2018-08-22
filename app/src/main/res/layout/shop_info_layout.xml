@@ -1,0 +1,389 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/main_bg_color" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onBack" >
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:src="@drawable/back_white" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:onClick="modifyInfo"
+            android:text="修改"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="商户信息"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:text="商户名"
+                    android:textColor="@color/item_third_font_color"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginEnd="30dip"
+                    android:layout_marginStart="30dip"
+                    android:background="#F1F1F1"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="5dip"
+                    android:paddingStart="5dip"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/item_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:text="电话    "
+                    android:textColor="@color/item_third_font_color"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/tv_fixedphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginEnd="30dip"
+                    android:layout_marginStart="30dip"
+                    android:background="#F1F1F1"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="5dip"
+                    android:paddingStart="5dip"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/item_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="55dip"
+                android:onClick="setAddress"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:text="区域    "
+                    android:textColor="@color/item_third_font_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginEnd="30dip"
+                    android:layout_marginStart="30dip"
+                    android:background="#F1F1F1"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="5dip"
+                    android:paddingStart="5dip"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/item_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="55dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:text="地址    "
+                    android:textColor="@color/item_third_font_color"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/tv_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginEnd="30dip"
+                    android:layout_marginStart="30dip"
+                    android:background="#F1F1F1"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="5dip"
+                    android:paddingStart="5dip"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/item_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:text="手机    "
+                    android:textColor="@color/item_third_font_color"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/tv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginEnd="30dip"
+                    android:layout_marginStart="30dip"
+                    android:background="#F1F1F1"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="5dip"
+                    android:paddingStart="5dip"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/item_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:text="邮箱    "
+                    android:textColor="@color/item_third_font_color"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/tv_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginEnd="30dip"
+                    android:layout_marginStart="30dip"
+                    android:background="#F1F1F1"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="5dip"
+                    android:paddingStart="5dip"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/item_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:text="邮编    "
+                    android:textColor="@color/item_third_font_color"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/tv_zipcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginEnd="30dip"
+                    android:layout_marginStart="30dip"
+                    android:background="#F1F1F1"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="5dip"
+                    android:paddingStart="5dip"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:visibility="gone"
+                android:background="@color/item_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dip"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:text="收益    "
+                    android:textColor="@color/item_third_font_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_income"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginEnd="30dip"
+                    android:layout_marginStart="30dip"
+                    android:background="#F1F1F1"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="5dip"
+                    android:paddingStart="5dip"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/item_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:gravity="center_vertical"
+                android:minHeight="55dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dip"
+                    android:gravity="top"
+                    android:text="介绍    "
+                    android:textColor="@color/item_third_font_color"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/tv_describtion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dip"
+                    android:layout_marginStart="30dip"
+                    android:background="#F1F1F1"
+                    android:gravity="top"
+                    android:minHeight="80dip"
+                    android:padding="5dip"
+                    android:text=""
+                    android:textColor="@color/item_second_font_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

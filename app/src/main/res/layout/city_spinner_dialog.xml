@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"    
+    android:focusableInTouchMode="true"    
+    android:orientation="vertical" >
+
+    <com.lyp.view.MySpinner
+        android:id="@+id/spinner1"
+        android:textCursorDrawable="@null"
+        android:layout_width="match_parent"
+        android:layout_height="50dip" />
+
+    <com.lyp.view.MySpinner
+        android:id="@+id/spinner2"
+        android:textCursorDrawable="@null"
+        android:layout_width="match_parent"
+        android:layout_height="50dip" />
+
+    <com.lyp.view.MySpinner
+        android:id="@+id/spinner3"
+        android:textCursorDrawable="@null"
+        android:layout_width="match_parent"
+        android:layout_height="50dip" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_marginTop="5dip"
+        android:background="@color/item_line_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/bt_cancel"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="@string/cancel"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="50dip"
+            android:background="@color/item_line_color" />
+
+        <Button
+            android:id="@+id/bt_ok"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="@string/ok"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>
